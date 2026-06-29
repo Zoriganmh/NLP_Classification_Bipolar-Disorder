@@ -38,18 +38,44 @@ Dự án sử dụng dữ liệu từ nhiều nguồn và thực hiện các bư
 ## Cấu trúc thư mục
 
 ```text
-scripts/
-├── BERT/               # Tokenize, train, evaluate cho BERT
-├── LTSM/               # Tiền xử lý, train, evaluate cho LSTM
-├── PhoBERT/            # Tokenize, train, evaluate cho PhoBERT
-├── RoBERTa/            # Tokenize, train, evaluate cho RoBERTa
-├── preprocessing/      # Tiền xử lý dữ liệu tiếng Anh và tiếng Việt
-├── PullData/           # Thu thập dữ liệu
-├── config.py           # Cấu hình chung
-├── check_cuda.py       # Kiểm tra GPU/CUDA
-├── translate_deep.py   # Dịch dữ liệu sang tiếng Việt
-├── requirements.txt    # Các dependency cần cài
-└── README.md           # Tài liệu hướng dẫn
+NLP_Classification_Bipolar-Disorder/
+├── README.md
+├── requirements.txt
+└── scripts/
+    ├── check_cuda.py
+    ├── config.py
+    ├── translate_deep.py
+    ├── BERT/
+    │   ├── bert_tokenize.py
+    │   ├── evaluate_bert.py
+    │   └── train_bert.py
+    ├── LTSM/
+    │   ├── evaluate_lstm.py
+    │   ├── lstm_preprocess.py
+    │   └── train_lstm.py
+    ├── PhoBERT/
+    │   ├── evaluate_phobert.py
+    │   ├── phobert_tokenize.py
+    │   └── train_phobert.py
+    ├── RoBERTa/
+    │   ├── evaluate_roberta.py
+    │   ├── roberta_tokenize.py
+    │   └── train_roberta.py
+    ├── preprocessing/
+    │   ├── english/
+    │   │   └── preprocessing.py
+    │   └── vietnamese/
+    │       ├── preprocessing_15k.py
+    │       ├── preprocessing_final.py
+    │       ├── preprocessing_pullpush.py
+    │       └── preprocessingDataTrans.py
+    └── PullData/
+        ├── english/
+        │   ├── Pulldata.py
+        │   └── PulldataUsePRAW.py
+        └── vietnamese/
+            ├── Pulldata.py
+            └── PulldataUsePRAW.py
 ```
 
 ## Yêu cầu môi trường
